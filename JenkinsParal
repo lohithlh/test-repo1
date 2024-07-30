@@ -8,14 +8,14 @@ pipeline {
          agent {label 'master' }
             steps {
                     sh 'sleep 60'
-                    echo sh 'mkdir master-1'
+                    echo 'sh mkdir master-1'
             }
         }
        stage('Deploy') {
           agent{label 'javanode'}
             steps {
                 sh 'sleep 60'
-                echo sh 'mkdir javanode1'
+                echo 'sh mkdir javanode1'
             }
         }
     }
