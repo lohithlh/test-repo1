@@ -1,9 +1,6 @@
 pipeline {
    agent none  
-   triggers {
-  cron '* * * * *'
-}
-  stages {
+   stages {
         stage('Stage1') {
          agent {label 'master' }
             steps {
