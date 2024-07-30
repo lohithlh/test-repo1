@@ -1,19 +1,26 @@
 pipeline {
-   agent none  
+   agent {label 'javanode'} 
    stages {
-        stage('Stage1') {
-         agent {label 'master' }
-            steps {
-                    sh 'sleep 60'
-                    echo 'sh mkdir master-1'
+        stage('ParallelJobs') {
+          parallel{
+           stage{'Stage-1A'}{
+             steps{
+                sh 'sleep 120'
+             }
+           }
+            stage{'Stage-1A'}{
+             steps{
+                sh 'sleep 120'
+             }
+           }
+          }  
             }
-        }
-       stage('Deploy') {
-          agent{label 'javanode'}
+
+              stage('Deploy') {
             steps {
-                sh 'sleep 60'
                 echo 'sh mkdir javanode1'
             }
         }
+    }  
     }
-}
+
