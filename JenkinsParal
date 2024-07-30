@@ -1,0 +1,19 @@
+pipeline {
+   agent none    
+  stages {
+        stage('Stage1') {
+         agent {label 'master' }
+            steps {
+                    sh 'touch master'
+                    sh 'mkdir master-1'
+            }
+        }
+       stage('Deploy') {
+          agent{label 'javanode'}
+            steps {
+                sh 'touch javanode'
+                sh 'mkdir javanode1'
+            }
+        }
+    }
+}
