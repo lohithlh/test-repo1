@@ -7,9 +7,11 @@ pipeline {
             }
         }
         stage('Static-test') {
-            steps {
-            }    echo 'Running static tests on code'
+           steps {
+                echo 'Running static tests on code'
+           }
         }
+            
          stage('Build') {
             steps {
                 sh 'mvn clean package'
