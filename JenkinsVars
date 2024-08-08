@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Variable_Demo') {
+            steps {
+                echo 'Job ${env.JOB_NAME} is running on ${env.JENKINS_URL} and no: ${env.BULID_ID} 
+            }
+        }
+    }
+}
