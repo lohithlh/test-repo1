@@ -4,10 +4,22 @@ pipeline {
         name='Lohith'
     }
     stages {
-        stage('Variable_Demo') {
+        stage('Variable_Toplevel') {
+        environment{
+         place='Davangere'
+        }
             steps {
                 echo "Job ${env.JOB_NAME} is running on ${env.JENKINS_URL} and having build no: ${env.BUILD_ID}"
                 echo "Name is : ${name}"
+                echo "Place is : ${place}"
+            }
+        }
+        
+        stage('Variable_Stagelevel') {
+            steps {
+                echo "Job ${env.JOB_NAME} is running on ${env.JENKINS_URL} and having build no: ${env.BUILD_ID}"
+                echo "Name is : ${name}"
+                echo "Place is : ${place}"
             }
         }
     }
