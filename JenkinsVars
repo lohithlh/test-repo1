@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        name'Lohith'
+        name='Lohith'
     }
     stages {
         stage('Variable_Demo') {
