@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '4')
+}
+
     environment {
         name='Lohith'
     }
