@@ -3,6 +3,7 @@ pipeline {
     environment{
      JENKINS_DEMO=credentials('DEMO_SECRET')
      DEMO_LH=credentials('demo_lh')
+     SSH_CRED=credentials('jenkins-java')
     }
     stages {
         stage('Hello') {
@@ -12,7 +13,11 @@ pipeline {
                 sh 'echo "My demo_lh cred is : USER:PASSWORD: ${DEMO_LH}"'
                 sh 'echo "My demo_lh user is : ${DEMO_LH_USR}"'
                 sh 'echo "My demo_lh password is : ${DEMO_LH_PSW}"'
-            }
+                 
+                sh 'echo "path of the private key: ${SSH_CRED}"'
+                sh 'echo "username of the cred: ${SSH_CRED_USR}"'
+                 sh 'echo "Value of passphrase : ${SSH_CRED_PSW}"'
+            } 
         }
     }
 }
