@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
      JENKINS_DEMO=credentials('DEMO_SECRET')
-     DEMO_LH=credentials('demo_lh'
+     DEMO_LH=credentials('demo_lh')
     }
     stages {
         stage('Hello') {
