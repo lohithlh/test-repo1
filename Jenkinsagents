@@ -6,10 +6,10 @@ pipeline {
                     git branch: 'main', url: 'https://github.com/lohithlh/test-repo1.git'
             }
         }
-        stage('Static-test') {
-           steps {
-                echo 'Running static tests on code'
-           }
+        stage('Static-Test'){
+         steps{
+           echo 'Running static test on code'
+         }
         }
             
          stage('Build') {
